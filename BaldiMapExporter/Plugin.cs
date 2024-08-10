@@ -71,6 +71,10 @@ namespace BaldiMapExporter
 
                 rw.Ceil = rc.ceilTex.name;
 
+                rw.DoO = rc.doorMats.open.mainTexture.name;
+
+                rw.DoS = rc.doorMats.shut.mainTexture.name;
+
                 Logger.LogInfo("defining cells");
 
                 rw.Cells = new CellWrapper[rc.cells.Count];
@@ -116,7 +120,7 @@ namespace BaldiMapExporter
                 {
                     DoorWrapper dw = new DoorWrapper();
                     dw.T = selector.GetType().Name;
-                    dw.Pos = PackVector3ToLong(selector.transform.position);
+                    dw.Pos = PackVector3ToLong(Vector3.Lerp(selector.aTile.TileTransform.position, selector.bTile.TileTransform.position, 1f / 2f));
                     dw.Dir = (int)selector.direction;
                     dw.AR = selector.aTile.room.name;
                     dw.BR = selector.bTile.room.name;

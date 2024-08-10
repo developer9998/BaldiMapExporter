@@ -65,6 +65,16 @@ namespace BaldiMapExporter.Models
         public string Ceil;
 
         /// <summary>
+        /// The name of the closed door texture the room uses.
+        /// </summary>
+        public string DoS;
+
+        /// <summary>
+        /// The name of the open door texture the room uses.
+        /// </summary>
+        public string DoO;
+
+        /// <summary>
         /// The collection of cells, or tiles in the room.
         /// </summary>
         public CellWrapper[] Cells;
