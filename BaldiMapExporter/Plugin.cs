@@ -140,7 +140,7 @@ namespace BaldiMapExporter
 
             mw.LevelSize = ec.levelSize;
 
-            long pack = PackColor((Color)AccessTools.Field(ec.GetType(), "lighting").GetValue(ec));
+            long pack = PackColor((Color)AccessTools.Field(ec.GetType(), "lighting").GetValue(ec)); // TODO: find functional method for getting lighting of map, this doesnt work and is equivalent to Color.white
 
             Logger.LogInfo(pack);
 
